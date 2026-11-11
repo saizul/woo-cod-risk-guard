@@ -1,0 +1,45 @@
+{
+    "name": "saizul/woo-cod-risk-guard",
+    "description": "Scores WooCommerce cash-on-delivery orders for fake-order and return risk. Built for Bangladesh and South Asia stores.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "keywords": ["woocommerce", "cash on delivery", "cod", "fraud", "risk", "bangladesh"],
+    "homepage": "https://github.com/saizul/woo-cod-risk-guard",
+    "authors": [
+        {
+            "name": "Saizul Amin",
+            "homepage": "https://saizul.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/saizul/woo-cod-risk-guard/issues",
+        "source": "https://github.com/saizul/woo-cod-risk-guard"
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saizul\\CodRiskGuard\\WP\\": "includes/",
+            "Saizul\\CodRiskGuard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Saizul\\CodRiskGuard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1.0"
+        }
+    }
+}

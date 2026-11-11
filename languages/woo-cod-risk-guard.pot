@@ -1,0 +1,884 @@
+# Copyright (C) 2026 Saizul Amin
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: COD Risk Guard for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/saizul/woo-cod-risk-guard/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-11T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Domain: woo-cod-risk-guard\n"
+
+#: woo-cod-risk-guard.php:31
+msgid "COD Risk Guard requires PHP 8.1 or newer."
+msgstr ""
+
+#: includes/Admin/CsvExport.php:52 includes/Privacy.php:150
+msgid "Order"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:53
+msgid "Date"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:54
+msgid "Status"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:55
+msgid "Score"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:56
+msgid "Level"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:57
+msgid "Action"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:58
+msgid "Total"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:59
+msgid "Currency"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:60
+msgid "Payment method"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:61
+msgid "Phone (masked)"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:62
+msgid "District / state"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:63
+msgid "Outcome"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:64 includes/Privacy.php:162
+msgid "Reasons"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:116
+msgid "You do not have permission to export orders."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:50 includes/Labels.php:81
+msgid "Blocklist"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:51 includes/Labels.php:83
+msgid "Allowlist"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:61 includes/Admin/ListsTab.php:85 includes/Admin/MetaBox.php:182
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:118
+msgid "Add an entry"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:119
+msgid "Entries are stored as keyed hashes. Only a masked label is kept so you can recognise them."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:125
+msgid "List"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:131 includes/Admin/ListsTab.php:154
+msgid "Type"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:137
+msgid "Value"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:138
+msgid "Note (optional)"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:138 includes/Admin/ListsTab.php:156
+msgid "Note"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:139
+msgid "Add"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:149
+msgid "No entries yet."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:155
+msgid "Entry (masked)"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:157
+msgid "Added (UTC)"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:158
+msgid "Actions"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:178
+msgid "Remove"
+msgstr ""
+
+#: includes/Admin/ListsTab.php:185
+msgid "Only the newest 200 entries are shown. Use WP-CLI to list all of them."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:199
+msgid "Entry added."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:200
+msgid "Entry removed."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:201
+msgid "That entry is already on the list, or the value is not valid for the selected type."
+msgstr ""
+
+#: includes/Admin/ListsTab.php:202
+msgid "The entry could not be processed."
+msgstr ""
+
+#: includes/Admin/MetaBox.php:60 includes/Admin/OrderColumn.php:60
+msgid "COD risk"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:117
+msgid "This order has not been scored."
+msgstr ""
+
+#. translators: %s: action name.
+#: includes/Admin/MetaBox.php:128
+msgid "Action at checkout: %s"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:137
+msgid "No risk signals were found."
+msgstr ""
+
+#. translators: %s: date and time.
+#: includes/Admin/MetaBox.php:151
+msgid "Scored on %s"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:163
+msgid "Score again"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:168
+msgid "Remove phone from blocklist"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:170
+msgid "Blocklist this phone"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:191
+msgid "Order not found."
+msgstr ""
+
+#. translators: %s: order number.
+#: includes/Admin/MetaBox.php:236
+msgid "Added from order %s"
+msgstr ""
+
+#: includes/Admin/MetaBox.php:267
+msgid "The order was scored again."
+msgstr ""
+
+#: includes/Admin/MetaBox.php:268
+msgid "The phone number was added to the blocklist."
+msgstr ""
+
+#: includes/Admin/MetaBox.php:269
+msgid "The phone number was removed from the blocklist."
+msgstr ""
+
+#: includes/Admin/MetaBox.php:270
+msgid "The request could not be completed."
+msgstr ""
+
+#: includes/Admin/OrderColumn.php:99
+msgid "Not scored"
+msgstr ""
+
+#. translators: %d: number of days.
+#: includes/Admin/ReportTab.php:43
+msgid "Scored orders in the last %d day"
+msgid_plural "Scored orders in the last %d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/ReportTab.php:51 includes/Admin/ReportTab.php:143
+msgid "Days"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:52
+msgid "Update"
+msgstr ""
+
+#. translators: %s: number of orders.
+#: includes/Admin/ReportTab.php:59
+msgid "Only the newest %s orders were analysed."
+msgstr ""
+
+#: includes/Admin/ReportTab.php:66 includes/Privacy.php:158
+msgid "Risk level"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:67
+msgid "Orders"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:68
+msgid "Delivered"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:69
+msgid "Returned"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:70
+msgid "Cancelled"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:71
+msgid "Failure rate"
+msgstr ""
+
+#. translators: 1: number of orders, 2: average score.
+#: includes/Admin/ReportTab.php:93
+msgid "Total scored orders: %1$s. Average score: %2$s."
+msgstr ""
+
+#: includes/Admin/ReportTab.php:114
+msgid "Most triggered rules"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:132
+msgid "Export risky orders (CSV)"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:137
+msgid "Minimum level"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:144
+msgid "Download CSV"
+msgstr ""
+
+#: includes/Admin/ReportTab.php:145
+msgid "The file contains order numbers, scores and reasons, with phone numbers masked."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:91 includes/Admin/SettingsPage.php:92 includes/Admin/SettingsPage.php:182 includes/Privacy.php:52 includes/Privacy.php:69 includes/Privacy.php:88
+msgid "COD Risk Guard"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:114 includes/Admin/SettingsPage.php:170
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:166
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:171
+msgid "Blocklist & allowlist"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:172
+msgid "Report & export"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:229
+msgid "General"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:233
+msgid "Scoring"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:234
+msgid "Score new orders at checkout"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:237
+msgid "Monitored payment methods"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:242
+msgid "Medium from"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:245
+msgid "High from"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:248
+msgid "Scores run from 0 (no risk signals) to 100."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:250
+msgid "Risk level thresholds"
+msgstr ""
+
+#. translators: %s: risk level name.
+#: includes/Admin/SettingsPage.php:256
+msgid "Action for %s risk"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:263
+msgid "Message when an order is blocked"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:267
+msgid "Message when advance payment is required"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:273
+msgid "Statuses that mean \"delivered\""
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:274
+msgid "Statuses that mean \"returned\""
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:275
+msgid "Statuses that mean \"cancelled\""
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:282
+msgid "Order note"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:283
+msgid "Add a private order note with the score and the reasons"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:287
+msgid "Velocity data retention"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:292
+msgid "days"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:293
+msgid "Hashed order events used for the velocity rules are deleted after this many days."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:298
+msgid "Uninstall"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:299
+msgid "Delete all plugin data (settings, lists, history tables) when the plugin is deleted"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:317
+msgid "Rules"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:318
+msgid "Each rule adds up to its weight to the score. The total is capped at 100."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:320
+msgid "On"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:321
+msgid "Rule"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:322
+msgid "Weight"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:323
+msgid "Options"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:472
+msgid "Leave empty to use the default message."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:525
+msgid "Orders paid with these methods are scored. Usually only cash on delivery."
+msgstr ""
+
+#: includes/Checkout/CheckoutHooks.php:404 includes/Checkout/CheckoutHooks.php:429
+msgid "COD Risk Guard: order put on hold for manual review."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:30
+msgid "Customer is on the blocklist (matched: %s)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:32
+msgid "Customer is on the allowlist (matched: %s)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:33
+msgid "No phone number was provided."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:34
+msgid "Phone number is not a valid Bangladesh mobile number."
+msgstr ""
+
+#: includes/Labels.php:35
+msgid "Phone number looks like a placeholder (repeated or sequential digits)."
+msgstr ""
+
+#: includes/Labels.php:36
+msgid "Phone number has an invalid length."
+msgstr ""
+
+#: includes/Labels.php:37
+msgid "Shipping phone differs from billing phone."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:39
+msgid "Bangladesh phone number used with a non-Bangladesh address (%s)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:41
+msgid "The only earlier order(s) from this phone were returned or cancelled (%1$d of %2$d)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:43
+msgid "%1$d of %2$d earlier orders from this phone were returned or cancelled (%3$d%%)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:45
+msgid "Phone has %d successfully delivered earlier orders."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:47
+msgid "First-time customer with a high order value (%1$s %2$s)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:49
+msgid "%1$d other orders from the same %2$s in the last %3$d hours."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:51
+msgid "%1$d other orders from the same IP address in the last %2$d minutes."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:53
+msgid "Address quality issues: %s."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:54
+msgid "Customer name is missing."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:55
+msgid "Customer name is too short."
+msgstr ""
+
+#: includes/Labels.php:56
+msgid "Customer name looks like random text."
+msgstr ""
+
+#: includes/Labels.php:57
+msgid "Customer name contains digits."
+msgstr ""
+
+#: includes/Labels.php:58
+msgid "Email address is not valid."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:60
+msgid "Email uses a disposable mailbox provider (%s)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:62
+msgid "Unusually large quantity of a single product (%1$d, limit %2$d)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:64
+msgid "Unusually large total quantity (%1$d items, limit %2$d)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:66
+msgid "Order was placed at night (%s local time)."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:68
+msgid "District %1$s has a configured return rate of %2$s%%."
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:69
+msgid "Phone number was verified by OTP."
+msgstr ""
+
+#: includes/Labels.php:82
+msgid "Phone, email, IP address or device is on the merchant blocklist. Forces the score to 100."
+msgstr ""
+
+#: includes/Labels.php:84
+msgid "Phone or email is on the merchant allowlist. Forces the score to 0 unless the customer is also blocklisted."
+msgstr ""
+
+#: includes/Labels.php:85
+msgid "Invalid phone number"
+msgstr ""
+
+#: includes/Labels.php:86
+msgid "Phone number is missing, is not a valid Bangladesh mobile number, or looks like a placeholder."
+msgstr ""
+
+#: includes/Labels.php:87
+msgid "Severity for placeholder numbers (0-1)"
+msgstr ""
+
+#: includes/Labels.php:88
+msgid "Phone mismatch"
+msgstr ""
+
+#: includes/Labels.php:89
+msgid "Shipping phone differs from billing phone, or the phone country does not match the address country."
+msgstr ""
+
+#: includes/Labels.php:90
+msgid "Phone order history"
+msgstr ""
+
+#: includes/Labels.php:91
+msgid "Share of earlier orders from this phone that were returned or cancelled. A good delivery record lowers the score."
+msgstr ""
+
+#: includes/Labels.php:92
+msgid "Minimum finished orders before the ratio is used"
+msgstr ""
+
+#: includes/Labels.php:93
+msgid "Failure ratio that triggers the rule (0-1)"
+msgstr ""
+
+#: includes/Labels.php:94
+msgid "Delivered orders needed for the trust bonus"
+msgstr ""
+
+#: includes/Labels.php:95
+msgid "Trust bonus as a share of the weight (0-1)"
+msgstr ""
+
+#: includes/Labels.php:96
+msgid "First-time buyer, high value"
+msgstr ""
+
+#: includes/Labels.php:97
+msgid "Customer has no delivered order yet and the order total is above the configured amount."
+msgstr ""
+
+#: includes/Labels.php:98
+msgid "Order total considered high (store currency)"
+msgstr ""
+
+#: includes/Labels.php:99
+msgid "Repeated orders"
+msgstr ""
+
+#: includes/Labels.php:100
+msgid "Several orders from the same phone or device within the configured window."
+msgstr ""
+
+#: includes/Labels.php:101
+msgid "Window in hours"
+msgstr ""
+
+#: includes/Labels.php:102
+msgid "Earlier orders in the window that trigger the rule"
+msgstr ""
+
+#: includes/Labels.php:103
+msgid "Order velocity per IP"
+msgstr ""
+
+#: includes/Labels.php:104
+msgid "Many orders from the same IP address within a short window."
+msgstr ""
+
+#: includes/Labels.php:105
+msgid "Window in minutes"
+msgstr ""
+
+#: includes/Labels.php:106
+msgid "Address quality"
+msgstr ""
+
+#: includes/Labels.php:107
+msgid "Address is too short, looks like random text, is a placeholder or has no house / road / area details."
+msgstr ""
+
+#: includes/Labels.php:108
+msgid "Minimum street address length (characters)"
+msgstr ""
+
+#: includes/Labels.php:109
+msgid "Customer name quality"
+msgstr ""
+
+#: includes/Labels.php:110
+msgid "Customer name is missing, too short, contains digits or looks like random text."
+msgstr ""
+
+#: includes/Labels.php:111
+msgid "Disposable email"
+msgstr ""
+
+#: includes/Labels.php:112
+msgid "Email address is malformed or uses a disposable mailbox provider."
+msgstr ""
+
+#: includes/Labels.php:113
+msgid "Extra disposable domains (one per line)"
+msgstr ""
+
+#: includes/Labels.php:114
+msgid "Quantity anomaly"
+msgstr ""
+
+#: includes/Labels.php:115
+msgid "Quantity of a single product, or of the whole order, is above the configured limits."
+msgstr ""
+
+#: includes/Labels.php:116
+msgid "Largest normal quantity of one product"
+msgstr ""
+
+#: includes/Labels.php:117
+msgid "Largest normal total quantity"
+msgstr ""
+
+#: includes/Labels.php:118
+msgid "Night-time order"
+msgstr ""
+
+#: includes/Labels.php:119
+msgid "Order was placed during the configured night hours (store time zone)."
+msgstr ""
+
+#: includes/Labels.php:120
+msgid "Night starts at hour (0-23)"
+msgstr ""
+
+#: includes/Labels.php:121
+msgid "Night ends before hour (0-23)"
+msgstr ""
+
+#: includes/Labels.php:122
+msgid "District return rate"
+msgstr ""
+
+#: includes/Labels.php:123
+msgid "Delivery district has a merchant-configured return rate above the threshold."
+msgstr ""
+
+#: includes/Labels.php:124
+msgid "Return rate per district (one \"District=percent\" per line)"
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:126
+msgid "Return rate (%) that triggers the rule"
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:128
+msgid "Return rate (%) treated as full severity"
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:129
+msgid "Phone verified by OTP"
+msgstr ""
+
+#. translators: placeholders are filled with order specific values.
+#: includes/Labels.php:130
+msgid "An OTP integration confirmed the phone number. Subtracts the weight from the score."
+msgstr ""
+
+#: includes/Labels.php:142
+msgid "address is empty"
+msgstr ""
+
+#: includes/Labels.php:143
+msgid "address is too short"
+msgstr ""
+
+#: includes/Labels.php:144
+msgid "address has too few words"
+msgstr ""
+
+#: includes/Labels.php:145
+msgid "address looks like random text"
+msgstr ""
+
+#: includes/Labels.php:146
+msgid "address contains no letters"
+msgstr ""
+
+#: includes/Labels.php:147
+msgid "address is a placeholder value"
+msgstr ""
+
+#: includes/Labels.php:148
+msgid "address only repeats the city name"
+msgstr ""
+
+#: includes/Labels.php:149
+msgid "city / town is missing"
+msgstr ""
+
+#: includes/Labels.php:150
+msgid "no house, road or area details"
+msgstr ""
+
+#: includes/Labels.php:151
+msgid "phone number"
+msgstr ""
+
+#: includes/Labels.php:152
+msgid "email address"
+msgstr ""
+
+#: includes/Labels.php:153
+msgid "IP address"
+msgstr ""
+
+#: includes/Labels.php:154
+msgid "device"
+msgstr ""
+
+#. translators: 1: score between 0 and 100, 2: risk level name, 3: action name.
+#: includes/OrderScorer.php:180
+msgid "COD risk score: %1$d/100 (%2$s). Action: %3$s."
+msgstr ""
+
+#: includes/Plugin.php:175
+msgid "COD Risk Guard needs WooCommerce to be installed and active."
+msgstr ""
+
+#: includes/Presenter.php:43
+msgid "High"
+msgstr ""
+
+#: includes/Presenter.php:45
+msgid "Medium"
+msgstr ""
+
+#: includes/Presenter.php:47
+msgid "Low"
+msgstr ""
+
+#: includes/Presenter.php:60
+msgid "Allow"
+msgstr ""
+
+#: includes/Presenter.php:62
+msgid "Put on hold for review"
+msgstr ""
+
+#: includes/Presenter.php:64
+msgid "Require advance payment (hide COD)"
+msgstr ""
+
+#: includes/Presenter.php:66
+msgid "Block the order"
+msgstr ""
+
+#. translators: %s: risk level name.
+#: includes/Presenter.php:158
+msgid "COD risk: %s"
+msgstr ""
+
+#: includes/Privacy.php:86
+msgid "When you place a cash-on-delivery order we calculate a risk score to protect the store against fake orders. To do this we keep a keyed hash (not the number itself) of your phone number together with counts of delivered, returned and cancelled orders, and hashes of your IP address and a first-party device cookie for a limited time. The score and the reasons for it are stored with your order."
+msgstr ""
+
+#: includes/Privacy.php:154
+msgid "Risk score"
+msgstr ""
+
+#: includes/Privacy.php:171
+msgid "Order history for this phone number"
+msgstr ""
+
+#. translators: 1: total orders, 2: delivered, 3: returned, 4: cancelled.
+#: includes/Privacy.php:174
+msgid "%1$d orders: %2$d delivered, %3$d returned, %4$d cancelled"
+msgstr ""
+
+#: includes/Privacy.php:185
+msgid "COD risk scores"
+msgstr ""
+
+#: includes/Rest/StatsController.php:54
+msgid "Number of days to include."
+msgstr ""
+
+#: includes/Rest/StatsController.php:80
+msgid "You are not allowed to view COD risk statistics."
+msgstr ""
+
+#: includes/Settings.php:179
+msgid "Cash on delivery is not available for this order. Please pay the delivery charge in advance using another payment method."
+msgstr ""
+
+#: includes/Settings.php:182
+msgid "Sorry, we cannot accept this order with cash on delivery. Please contact us or choose another payment method."
+msgstr ""
+#. Plugin Name of the plugin
+#: woo-cod-risk-guard.php
+msgid "COD Risk Guard for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+#: woo-cod-risk-guard.php
+msgid "Scores cash-on-delivery orders for fake-order and return risk, and lets you hold, restrict or block risky orders. Built for stores in Bangladesh and South Asia."
+msgstr ""
