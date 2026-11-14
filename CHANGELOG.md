@@ -5,6 +5,27 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project follows [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- `shared_device` rule ("Device used with several phones", weight 25): flags
+  a device that placed orders with several different phone numbers within a
+  window (defaults: 2 other phones in 30 days). Checking the IP address as
+  well is available as an option and is off by default, because mobile
+  carriers share one IP between many customers.
+- `LinkedIdentifierProviderInterface` with `countDistinctLinked()`,
+  implemented by the database event repository and by
+  `InMemoryVelocityProvider` (which also gains `recordOrder()`). Custom
+  velocity providers that do not implement it keep working; the new rule
+  just does not fire for them.
+
+### Changed
+
+- Existing installations get the new rule enabled with its default weight.
+  Orders with a reused device can score up to 25 points higher than before;
+  disable the rule or lower its weight on the settings screen if needed.
+
 ## [1.0.0] - 2026-11-11
 
 ### Added
@@ -25,4 +46,5 @@ and the project follows [Semantic Versioning](https://semver.org/).
 - HPOS compatibility declaration.
 - Translation template.
 
+[Unreleased]: https://github.com/saizul/woo-cod-risk-guard/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/saizul/woo-cod-risk-guard/releases/tag/v1.0.0

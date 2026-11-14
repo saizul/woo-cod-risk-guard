@@ -21,6 +21,7 @@ COD Risk Guard gives each cash-on-delivery order a risk score from 0 to 100 toge
 * Phone number validity (Bangladesh mobile formats, Bangla digits, placeholder numbers)
 * Delivery history of the phone number: delivered, returned and cancelled orders
 * Repeated orders from the same phone, device or IP address
+* One device ordering with several different phone numbers
 * Address and customer name quality
 * Disposable email addresses
 * Unusual quantities and night-time orders
@@ -82,6 +83,9 @@ The rules that do not depend on the phone format work everywhere. Detailed phone
 Screenshots have not been added yet.
 
 == Changelog ==
+
+= Unreleased =
+* New rule "Device used with several phones" (`shared_device`): flags a device, and optionally an IP address, that placed orders with several different phone numbers in a configurable window.
 
 = 1.0.0 =
 * First release.

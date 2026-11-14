@@ -20,11 +20,11 @@ final class RegistryAndConfigTest extends TestCase
     {
         $registry = RuleRegistry::withDefaults();
 
-        self::assertSame(15, $registry->count());
+        self::assertSame(16, $registry->count());
         self::assertSame(
             [
                 'blocklist', 'allowlist', 'phone_validity', 'phone_mismatch', 'phone_history',
-                'first_time_high_value', 'repeat_orders', 'ip_velocity', 'address_quality',
+                'first_time_high_value', 'repeat_orders', 'ip_velocity', 'shared_device', 'address_quality',
                 'customer_name', 'disposable_email', 'quantity_anomaly', 'night_order',
                 'district_return_rate', 'otp_verified',
             ],
@@ -81,7 +81,7 @@ final class RegistryAndConfigTest extends TestCase
         $registry->register(new FixedRule('night_order', 1.0, 50.0), true);
 
         self::assertInstanceOf(FixedRule::class, $registry->get('night_order'));
-        self::assertSame(15, $registry->count());
+        self::assertSame(16, $registry->count());
     }
 
     /**
@@ -185,6 +185,6 @@ final class RegistryAndConfigTest extends TestCase
 
         self::assertSame(5.0, $config->rule('night_order')->weight);
         self::assertSame(50.0, $changed->rule('night_order')->weight);
-        self::assertCount(15, $changed->rules());
+        self::assertCount(16, $changed->rules());
     }
 }

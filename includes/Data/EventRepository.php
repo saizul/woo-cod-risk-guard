@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Saizul\CodRiskGuard\WP\Data;
 
 use DateTimeImmutable;
+use Saizul\CodRiskGuard\History\LinkedIdentifierProviderInterface;
 use Saizul\CodRiskGuard\History\VelocityProviderInterface;
 use Saizul\CodRiskGuard\Support\IdentifierHasher;
 use Saizul\CodRiskGuard\WP\Schema;
@@ -20,7 +21,7 @@ use Saizul\CodRiskGuard\WP\Schema;
  * Used to answer "how many other orders came from this phone / IP / device
  * recently". Old rows are pruned by the daily maintenance job.
  */
-final class EventRepository implements VelocityProviderInterface
+final class EventRepository implements VelocityProviderInterface, LinkedIdentifierProviderInterface
 {
     /**
      * Column for each identifier type that can be counted.
@@ -53,6 +54,40 @@ final class EventRepository implements VelocityProviderInterface
                 $hash,
                 HistoryRepository::format($since),
                 $excludeOrderId
+            )
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function countDistinctLinked(
+        string $type,
+        string $hash,
+        string $linkedType,
+        DateTimeImmutable $since,
+        string $excludeLinkedHash = '',
+        int $excludeOrderId = 0
+    ): int {
+        if ('' === $hash || ! isset(self::COLUMNS[$type], self::COLUMNS[$linkedType]) || $type === $linkedType) {
+            return 0;
+        }
+
+        global $wpdb;
+
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Custom table; must be fresh for velocity checks.
+        return (int) $wpdb->get_var(
+            $wpdb->prepare(
+                "SELECT COUNT(DISTINCT %i) FROM %i WHERE %i = %s AND created_at >= %s AND order_id <> %d AND %i <> '' AND %i <> %s",
+                self::COLUMNS[$linkedType],
+                Schema::eventsTable(),
+                self::COLUMNS[$type],
+                $hash,
+                HistoryRepository::format($since),
+                $excludeOrderId,
+                self::COLUMNS[$linkedType],
+                self::COLUMNS[$linkedType],
+                $excludeLinkedHash
             )
         );
     }

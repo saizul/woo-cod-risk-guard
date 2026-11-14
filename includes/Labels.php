@@ -49,6 +49,8 @@ final class Labels
             'repeat_orders.match' => __('%1$d other orders from the same %2$s in the last %3$d hours.', 'woo-cod-risk-guard'),
             /* translators: placeholders are filled with order specific values. */
             'ip_velocity.match' => __('%1$d other orders from the same IP address in the last %2$d minutes.', 'woo-cod-risk-guard'),
+            /* translators: 1: number of phone numbers, 2: "device" or "IP address", 3: number of days. */
+            'shared_device.match' => __('%1$d other phone numbers ordered from the same %2$s in the last %3$d days.', 'woo-cod-risk-guard'),
             /* translators: placeholders are filled with order specific values. */
             'address_quality.issues' => __('Address quality issues: %s.', 'woo-cod-risk-guard'),
             'customer_name.missing' => __('Customer name is missing.', 'woo-cod-risk-guard'),
@@ -103,6 +105,11 @@ final class Labels
             'Order velocity per IP' => __('Order velocity per IP', 'woo-cod-risk-guard'),
             'Many orders from the same IP address within a short window.' => __('Many orders from the same IP address within a short window.', 'woo-cod-risk-guard'),
             'Window in minutes' => __('Window in minutes', 'woo-cod-risk-guard'),
+            'Device used with several phones' => __('Device used with several phones', 'woo-cod-risk-guard'),
+            'The same device (or, optionally, IP address) placed orders with several different phone numbers.' => __('The same device (or, optionally, IP address) placed orders with several different phone numbers.', 'woo-cod-risk-guard'),
+            'Window in days' => __('Window in days', 'woo-cod-risk-guard'),
+            'Other phone numbers in the window that trigger the rule' => __('Other phone numbers in the window that trigger the rule', 'woo-cod-risk-guard'),
+            'Also check the IP address' => __('Also check the IP address', 'woo-cod-risk-guard'),
             'Address quality' => __('Address quality', 'woo-cod-risk-guard'),
             'Address is too short, looks like random text, is a placeholder or has no house / road / area details.' => __('Address is too short, looks like random text, is a placeholder or has no house / road / area details.', 'woo-cod-risk-guard'),
             'Minimum street address length (characters)' => __('Minimum street address length (characters)', 'woo-cod-risk-guard'),
