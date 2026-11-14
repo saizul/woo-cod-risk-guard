@@ -32,7 +32,7 @@ final class SanitizerTest extends TestCase
         self::assertSame(['low' => 'allow', 'medium' => 'hold', 'high' => 'require_advance'], $defaults['actions']);
         self::assertSame(90, $defaults['retention_days']);
         self::assertFalse($defaults['delete_on_uninstall']);
-        self::assertCount(15, $defaults['rules']);
+        self::assertCount(16, $defaults['rules']);
         self::assertSame(35.0, $defaults['rules']['phone_history']['weight']);
         self::assertSame(5000.0, $defaults['rules']['first_time_high_value']['options']['amount']);
     }
@@ -54,6 +54,7 @@ final class SanitizerTest extends TestCase
                 'first_time_high_value' => 15.0,
                 'repeat_orders'         => 20.0,
                 'ip_velocity'           => 20.0,
+                'shared_device'         => 25.0,
                 'address_quality'       => 20.0,
                 'customer_name'         => 8.0,
                 'disposable_email'      => 10.0,
@@ -198,12 +199,31 @@ final class SanitizerTest extends TestCase
         self::assertArrayNotHasKey('injected', $clean['rules']['phone_history']['options']);
     }
 
+    public function testSharedDeviceOptionsAreSanitised(): void
+    {
+        $defaults = $this->sanitizer->sanitize([]);
+        self::assertSame(
+            ['window_days' => 30, 'max_phones' => 2, 'include_ip' => false],
+            $defaults['rules']['shared_device']['options']
+        );
+
+        $clean = $this->sanitizer->sanitize([
+            'rules' => [
+                'shared_device' => ['options' => ['window_days' => 9999, 'max_phones' => 0, 'include_ip' => '1']],
+            ],
+        ]);
+
+        self::assertSame(365, $clean['rules']['shared_device']['options']['window_days']);
+        self::assertSame(1, $clean['rules']['shared_device']['options']['max_phones']);
+        self::assertTrue($clean['rules']['shared_device']['options']['include_ip']);
+    }
+
     public function testUnknownRulesAreDropped(): void
     {
         $clean = $this->sanitizer->sanitize(['rules' => ['ghost' => ['enabled' => true, 'weight' => 99]]]);
 
         self::assertArrayNotHasKey('ghost', $clean['rules']);
-        self::assertCount(15, $clean['rules']);
+        self::assertCount(16, $clean['rules']);
     }
 
     public function testDomainLinesAreCleaned(): void

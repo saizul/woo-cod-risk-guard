@@ -20,9 +20,10 @@ comes with the list of reasons that produced it.
 
 - **Risk score (0-100) and level** (low / medium / high) for every order paid
   with a monitored gateway (COD by default).
-- **15 bundled rules** covering phone validity (Bangladesh mobile formats,
+- **16 bundled rules** covering phone validity (Bangladesh mobile formats,
   Bangla digits, placeholder numbers), per-phone delivery history, order
-  velocity per phone / device / IP, address and name quality, disposable
+  velocity per phone / device / IP, one device ordering with several phone
+  numbers, address and name quality, disposable
   email, quantity anomalies, night-time orders and per-district return rates.
 - **Configurable action per level**: allow, put on hold, require advance
   payment (COD is hidden at checkout) or block with a message.
@@ -92,6 +93,7 @@ and on/off switch can be changed on the settings screen.
 | `first_time_high_value` | No delivered order yet and the order total is high. | 15 | amount 5000 |
 | `repeat_orders` | Several orders from the same phone or device in a window. | 20 | 2 earlier orders in 24 hours |
 | `ip_velocity` | Many orders from the same IP address in a short window. | 20 | 3 earlier orders in 60 minutes |
+| `shared_device` | The same device (optionally also the same IP address) ordered with several different phone numbers. | 25 | 2 other phones in 30 days, IP check off |
 | `address_quality` | Address too short, random text, placeholder, or no house / road / area details. | 20 | min. length 10 |
 | `customer_name` | Name missing, too short, containing digits or random text. | 8 | - |
 | `disposable_email` | Malformed email or a disposable mailbox provider. | 10 | extra domains |
@@ -102,6 +104,21 @@ and on/off switch can be changed on the settings screen.
 
 `district_return_rate` does nothing until you enter your own per-district
 return rates; the plugin does not ship courier statistics.
+
+`shared_device` catches customers who switch to a new phone number from the
+same browser, for example to get around the blocklist or a bad delivery
+record on their old number. It counts distinct phone hashes recorded with the
+device cookie (`codrg_did`) in the window; the order's own phone is never
+counted. The IP check is off by default because mobile carriers put many
+customers behind one shared address; turn it on only if your traffic is
+mostly home or office broadband. The window cannot reach further back than
+the event retention period (90 days by default), and the rule has nothing to
+work with when the device cookie is disabled.
+
+A custom velocity provider (`VelocityProviderInterface`) only takes part in
+this rule if it also implements
+`Saizul\CodRiskGuard\History\LinkedIdentifierProviderInterface`; otherwise
+the rule simply does not fire.
 
 ### Actions
 

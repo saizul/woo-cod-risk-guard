@@ -498,6 +498,11 @@ msgstr ""
 msgid "%1$d other orders from the same IP address in the last %2$d minutes."
 msgstr ""
 
+#. translators: 1: number of phone numbers, 2: "device" or "IP address", 3: number of days.
+#: includes/Labels.php:53
+msgid "%1$d other phone numbers ordered from the same %2$s in the last %3$d days."
+msgstr ""
+
 #. translators: placeholders are filled with order specific values.
 #: includes/Labels.php:53
 msgid "Address quality issues: %s."
@@ -645,6 +650,26 @@ msgstr ""
 
 #: includes/Labels.php:105
 msgid "Window in minutes"
+msgstr ""
+
+#: includes/Labels.php:108
+msgid "Device used with several phones"
+msgstr ""
+
+#: includes/Labels.php:109
+msgid "The same device (or, optionally, IP address) placed orders with several different phone numbers."
+msgstr ""
+
+#: includes/Labels.php:110
+msgid "Window in days"
+msgstr ""
+
+#: includes/Labels.php:111
+msgid "Other phone numbers in the window that trigger the rule"
+msgstr ""
+
+#: includes/Labels.php:112
+msgid "Also check the IP address"
 msgstr ""
 
 #: includes/Labels.php:106

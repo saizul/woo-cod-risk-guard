@@ -30,6 +30,7 @@ final class Presenter
         'blocklist.match'        => [0 => ', '],
         'allowlist.match'        => [0 => ', '],
         'repeat_orders.match'    => [1 => ', '],
+        'shared_device.match'    => [1 => ', '],
         'address_quality.issues' => [0 => '; '],
     ];
 

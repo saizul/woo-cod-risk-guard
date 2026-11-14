@@ -34,7 +34,7 @@ final class RiskEngineTest extends EngineTestCase
         self::assertSame(RiskLevel::LOW, $result->level);
         self::assertSame([], $result->reasons());
         self::assertNull($result->override);
-        self::assertCount(15, $result->results);
+        self::assertCount(16, $result->results);
     }
 
     public function testPointsAreSummed(): void
@@ -295,7 +295,7 @@ final class RiskEngineTest extends EngineTestCase
     {
         $engine = $this->engine();
 
-        self::assertSame(15, $engine->registry()->count());
+        self::assertSame(16, $engine->registry()->count());
         self::assertSame(40, $engine->config()->mediumThreshold);
         self::assertSame($this->signals, $engine->signals());
     }

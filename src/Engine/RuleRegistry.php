@@ -26,6 +26,7 @@ use Saizul\CodRiskGuard\Rules\PhoneValidityRule;
 use Saizul\CodRiskGuard\Rules\QuantityAnomalyRule;
 use Saizul\CodRiskGuard\Rules\RepeatOrdersRule;
 use Saizul\CodRiskGuard\Rules\RuleInterface;
+use Saizul\CodRiskGuard\Rules\SharedDeviceRule;
 
 /**
  * Ordered collection of rules, keyed by rule id.
@@ -67,6 +68,7 @@ final class RuleRegistry
             new FirstTimeHighValueRule(),
             new RepeatOrdersRule(),
             new IpVelocityRule(),
+            new SharedDeviceRule(),
             new AddressQualityRule(),
             new CustomerNameRule(),
             new DisposableEmailRule(),

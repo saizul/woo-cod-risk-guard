@@ -14,7 +14,7 @@ use DateTimeImmutable;
 /**
  * Velocity provider that keeps events in memory (tests, dry runs).
  */
-final class InMemoryVelocityProvider implements VelocityProviderInterface
+final class InMemoryVelocityProvider implements VelocityProviderInterface, LinkedIdentifierProviderInterface
 {
     /**
      * @var array<int, array{type:string, hash:string, at:int, order:int}>
@@ -36,6 +36,21 @@ final class InMemoryVelocityProvider implements VelocityProviderInterface
             'at'    => $at->getTimestamp(),
             'order' => $orderId,
         ];
+    }
+
+    /**
+     * Record every identifier hash of one order at once.
+     *
+     * Events that share an order id are linked to each other, which is what
+     * countDistinctLinked() relies on.
+     *
+     * @param array<string, string> $hashes Identifier hashes keyed by identifier type.
+     */
+    public function recordOrder(int $orderId, array $hashes, DateTimeImmutable $at): void
+    {
+        foreach ($hashes as $type => $hash) {
+            $this->record((string) $type, (string) $hash, $at, $orderId);
+        }
     }
 
     public function countSince(string $type, string $hash, DateTimeImmutable $since, int $excludeOrderId = 0): int
@@ -60,6 +75,52 @@ final class InMemoryVelocityProvider implements VelocityProviderInterface
         }
 
         return $count;
+    }
+
+    public function countDistinctLinked(
+        string $type,
+        string $hash,
+        string $linkedType,
+        DateTimeImmutable $since,
+        string $excludeLinkedHash = '',
+        int $excludeOrderId = 0
+    ): int {
+        if ('' === $hash) {
+            return 0;
+        }
+
+        $from   = $since->getTimestamp();
+        $orders = [];
+
+        foreach ($this->events as $event) {
+            // Events without an order id cannot be linked to other identifiers.
+            if ($event['order'] <= 0 || $event['order'] === $excludeOrderId) {
+                continue;
+            }
+
+            if ($event['type'] === $type && $event['hash'] === $hash && $event['at'] >= $from) {
+                $orders[$event['order']] = true;
+            }
+        }
+
+        if ([] === $orders) {
+            return 0;
+        }
+
+        $linked = [];
+        foreach ($this->events as $event) {
+            if ($event['type'] !== $linkedType || ! isset($orders[$event['order']])) {
+                continue;
+            }
+
+            if ('' === $event['hash'] || $event['hash'] === $excludeLinkedHash) {
+                continue;
+            }
+
+            $linked[$event['hash']] = true;
+        }
+
+        return count($linked);
     }
 
     /**
